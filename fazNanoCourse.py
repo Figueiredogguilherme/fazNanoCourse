@@ -105,20 +105,19 @@ def browsing():
 
             update_status_label(f"\n Mantendo o documento aberto por 15 segundos [")
             time.sleep(3)
-            update_status_label("|")
+            update_status_label("█")
             time.sleep(3)
-            update_status_label("|")
+            update_status_label("█")
             time.sleep(3)
-            update_status_label("|")
+            update_status_label("█")
             time.sleep(3)
-            update_status_label("|")
+            update_status_label("█")
             time.sleep(3)
             update_status_label("|")
             update_status_label("]")
             driver.back()
         else:
             update_status_label(f"OK")
-
 
     update_status_label("\n Todos os capítulos concluídos, fechando o programa.")
     time.sleep(2)
