@@ -71,7 +71,7 @@ def browsing():
     # Inicie o WebDriver do Edge usando o serviço e as opções
     driver = webdriver.Edge(service=service, options=options)
 
-    # Example: Navigate to a URL
+    # Example: Navigate to a URLo
     driver.get('https://www2.fiap.com.br/Aluno/BlackBoard')
     driver.minimize_window()
     update_status_label("OK")
