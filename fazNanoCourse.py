@@ -13,6 +13,7 @@ from selenium.webdriver import ActionChains
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
+from selenium.webdriver.edge.service import Service
 
 # Function to download and setup EdgeDriver
 def download_Edgedriver():
@@ -60,9 +61,15 @@ def browsing():
 
     options = webdriver.EdgeOptions()
     options.add_argument('--disable-extensions')
-        
+
+    # Defina o caminho para o driver Edge
     edge_driver_path = os.path.abspath('./edgedriver/msedgedriver.exe')
-    driver = webdriver.Edge(executable_path=edge_driver_path, options=options)
+
+    # Crie o serviço do Edge
+    service = Service(executable_path=edge_driver_path)
+
+    # Inicie o WebDriver do Edge usando o serviço e as opções
+    driver = webdriver.Edge(service=service, options=options)
 
     # Example: Navigate to a URL
     driver.get('https://www2.fiap.com.br/Aluno/BlackBoard')
